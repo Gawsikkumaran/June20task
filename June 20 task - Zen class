@@ -1,0 +1,24 @@
+1) List 5 difference between Browser JS(console) v Nodejs
+    a)JS console can be run inthe browser whereas Node JS can be run outside the browser.
+    b)JS console is used on client side and front end development whereas Node JS is used on server side and development .
+    c)JS console can interact with API's , cookies etc .. , whereas Node JS can't interact with stuffs like that . 
+    d)JS console is a version of ECMA script written in C++ whereas Node JS is written in C,C++,Javascript .
+    e)JS console can't control the environment that the visitors use whereas the Node JS can actually control the environment .
+
+2) Watch & summary 5 points - https://www.youtube.com/watch?v=SmE4OwHztCc&ab_channel=JSConf
+    a)The components that the browser uses for rendering are Bindings , Rendering , Platform , JavaScript Virtual Machine .
+    b)Parsing HTML could be forgiving in nature , could be halted , can do speculative parsing .
+    c)Parsing flow includes tokenization , tree construction , DOM construction , Script execution .
+    d)CSS Object Model is a representation of styles , selectors etc . .
+    e)Render combines 2 object models and have multiple trees like render objects , styles , layers etc. .
+    
+3) Execute the bellow code and write your description in txt file
+        typeof(1)  -  number
+        typeof(1.1) - number
+        typeof('1.1') - string
+        typeof(true) - boolean
+        typeof(null) - object
+        typeof(undefined) - undefined
+        typeof([]) - object
+        typeof({}) - object
+        typeof(NaN) - number
