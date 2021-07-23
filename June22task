@@ -1,0 +1,266 @@
+Task - July 22, 2021
+    1) create your own resume data in JSON format
+    
+    Solution:
+    ---------
+    var my_resume = {
+    "general": {
+      "name": "Gawsikkumaran",
+      "email": "akz@gmail.com",
+      "phone": "***********",
+      "degree": "BE",
+      "department":"EEE",
+      "location": {
+        "address": "38,TVKK Nagar,Theni",
+        "postalCode": "625513",
+        "city": "Theni",
+      },
+    "work": 
+      {
+        "hasWorkExperience": "No",
+      } ,
+    "education": [
+      {
+        "institution": "Thiagarajar College Of Engineering",
+        "area": "EEE",
+        "studyType": "Full time",
+        "gpa": "8.55",
+        "courses": [
+          "PythonProgramming","DataScience"
+        ]
+      }
+    ],
+    "skills": [
+      {
+        "name": "Web development",
+        "level": "Basics",
+        "keywords": [
+          "Javascipt","HTML"
+        ]
+      }
+    ],
+    "languages": [
+      {
+        "languageKnown": ["Tamil","English"]
+      }
+    ],
+    "interests": [
+      {
+        "name": "Movies",
+        "keywords": [
+          "Thriller","Horror"
+        ]
+      }
+    ]
+  };
+-----------------------------------------------------------------------------------------------
+    2) how to compare two JSON have the same properties without order?
+        var obj1 = { name: "Person 1", age:5 };
+        var obj2 = { age:5, name: "Person 1" };
+        Solution:
+        ---------
+var obj1 = { name: "Person 1", age:5 };
+var obj2 = { age:5, name: "Person 1" };
+var flag;
+
+if(Object.keys(obj1).length==Object.keys(obj2).length)
+{
+    for(let key in obj1)
+    { 
+        if(obj1[key] == obj2[key]) 
+        {
+            flag = true ;
+        }
+        else
+        {
+            flag = false;
+            break;
+        }
+    }
+}
+else
+{
+    flag=false;
+}
+console.log(flag);
+------------------------------------------------------------------------------------------------
+    3) https://medium.com/@reach2arunprakash/www-guvi-io-zen-d395deec1373
+Task1 Solutions:
+----------------
+// 1) Declare four variables without assigning values and print them in console
+var a,b,c,d;
+console.log(a,b,c,d);
+
+// 2) How to get value of the variable myvar as output
+var myvar = 1;
+console.log(myvar);
+
+// 3)Declare variables to store your first name, last name, marital status, country and age in multiple lines
+var firstName ;
+var lastName ;
+var maritalStatus ;
+var country ;
+var age ;
+
+// 4)Declare variables to store your first name, last name, marital status, country and age in a single line
+var firstName,lastName,maritalStatus,country,age;
+
+// 5)Declare variables and assign string, boolean, undefined and null data types
+var str1 = 'I am' ;
+var age = 25 ;
+var str2 = 'years old';
+var check = true ;
+
+// 6)Convert the string to integer
+var str3 = '40';
+console.log(parseInt(str3));
+console.log(Number(str3));
+console.log(+str3);
+
+//7)Write 6 statement which provide truthy & falsey values
+console.log(400 == 10);
+console.log('Monday' == 'Sunday');
+console.log(1000000000<=10000000);
+console.log('a'!='e');
+console.log(10%2==0);
+console.log('z'>'a');
+
+Task2 Solutions:
+---------------
+// 1)Square of a number
+let num = 2;
+console.log(Math.pow(num,2));
+
+//2)Swapping 2 numbers
+let x = 10;
+let y = 20;
+console.log(x,y);
+let temp = x;
+x = y;
+y = temp;
+console.log(x,y);
+
+//3)Addition of 3 numbers
+let a1=100,a2=200,a3=300;
+console.log(a1+a2+a3);
+
+//4)Celsius to Fahrenheit conversion
+let temperature = 32 ;
+let farenheit = ( temperature * 1.8 )+32;
+console.log(farenheit);
+
+//5)Meter to miles
+let meters = 5000;
+let miles = meters/1609.344;
+console.log(miles.toFixed(4));
+
+//6)Pounds to kg
+let pounds = 10;
+let kg = pounds/2.205;
+console.log(kg.toFixed(4));
+
+//7)Calculate Batting Average
+let scores = [10,70,80,45,102,14,21];
+let total = 0;
+for(let score of scores)
+{
+    total += score;
+}
+let battingAvg = (total/scores.length).toFixed(4);
+console.log(battingAvg);
+
+//8)Calculate five test scores and print their average
+let marks = [10,70,80,45,102,14,21];
+let sum = 0;
+for(let mark of marks)
+{
+    sum += mark;
+}
+let markAvg = (sum/marks.length).toFixed(4);
+console.log(markAvg);
+
+//9)Power of any number x ^ y.
+let x1 = 10;
+let y1 = 4;
+console.log(Math.pow(x1,y1));
+
+//10)Calculate Simple Interest
+let P=1000,N=2,R=5;
+let SI = (P*N*R)/100;
+console.log(SI);
+
+//11)Calculate area of an equilateral triangle
+let sideValue = 10;
+let equArea = (Math.sqrt(3)/4)*Math.pow(sideValue,2);
+console.log(equArea.toFixed(4));
+
+//12)Area Of Isosceles Triangle
+let breadthofI = 10;
+let heigthofI = 20;
+let isoArea = (breadthofI*heigthofI)/2;
+console.log(isoArea);
+
+//13)Volume Of Sphere
+let sphereRadius = 10;
+let volumeSphere = (4/3)*Math.PI*Math.pow(sphereRadius,3);
+console.log(volumeSphere.toFixed(4));
+
+//14)Volume Of Prism
+let prismBase = 10;
+let prismHeight = 20;
+let volumePrism = prismBase*prismHeight;
+console.log(volumePrism);
+
+//15)Find area of a triangle.
+let triangleBase = 10;
+let triangleHeight = 20;
+let areaTriangle = (triangleBase*triangleHeight)/2;
+console.log(areaTriangle);
+
+//16)Give the Actual cost and Sold cost, Calculate Discount Of Product
+let actualCost = 620;
+let soldCost = 558;
+let discount = (actualCost-soldCost)/100;
+console.log(discount*100+'%');
+
+//17)Given their radius of a circle and find its diameter, circumference and area.
+let radiusCircle = 10;
+let diameterCircle = 2*radiusCircle;
+let circumferenceCircle = 2*Math.PI*radiusCircle;
+let areaCircle = Math.PI * Math.pow(radiusCircle,2);
+console.log(diameterCircle,circumferenceCircle,areaCircle);
+
+//18)Given two numbers and perform all arithmetic operations.
+let num1 = 200;
+let num2 = 100;
+console.log('Addition',num1+num2);
+console.log('Subtraction',num1-num2);
+console.log('Multiplication',num1*num2);
+console.log('Division',num1/num2);
+
+//19)Display the asterisk pattern as shown below
+console.log('*****');
+console.log('*****');
+console.log('*****');
+console.log('*****');
+console.log('*****');
+
+//20)Calculate electricity bill?
+//For example, a consumer consumes 100 watts per hour daily for one month. Calculate the total energy bill of that consumer if per unit rate is 10?
+let wattsConsumed = 100;
+let totKWhinUnits = (wattsConsumed*24*30)/1000;
+let bill = totKWhinUnits*9;
+console.log(bill);
+
+//21)Program To Calculate CGPA
+let GPA = {'English' : 9.1  ,
+    'Hindi' : 8.5  ,
+    'Maths' : 9.5  ,
+    'Science' : 9.6  ,
+    'SocialStudy' : 8.6  };
+let sumOfGrades = 0;
+for(let sub in GPA)
+{
+    sumOfGrades+=GPA[sub];
+}
+console.log(sumOfGrades/5);
