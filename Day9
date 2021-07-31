@@ -1,0 +1,75 @@
+var xhr = new XMLHttpRequest();
+xhr.open("GET","https://restcountries.eu/rest/v2/all");
+xhr.onload = function() {
+    var t = JSON.parse(this.response);
+    filter_countries(t);
+    filter_population(t);
+    eachdata(t);
+    total_population(t);
+    USDollar(t);
+};
+xhr.onerror = function (){
+    console.log("Error",this.statusText);
+};
+xhr.send();
+
+
+
+
+//Get all the countries from Asia continent /region using Filter function
+
+function filter_countries(data){
+    let ans = data.filter((value)=>{
+            return value.region=="Asia";
+    });
+    let result = [];
+    for(let details of ans)
+    {
+        result.push(details.name);
+    }
+    console.log(result);
+}
+
+//Get all the countries with a population of less than 2 lakhs using Filter function
+
+function filter_population(data){
+    let ans = data.filter((value)=>{
+            return value.population<200000;
+    });
+    let result = [];
+    for(let details of ans)
+    {
+        result.push(details.name);
+    }
+    console.log(result);
+}
+
+//Print the following details name, capital, flag using forEach function
+
+function eachdata(data){
+    data.forEach(value => console.log("Country - ",value.name,", Capital - ",value.capital,", Flag - ",value.flag));
+}
+
+
+//Print the total population of countries using reduce function
+
+function total_population(data){
+    let ans = data.reduce(function(prev,curr){
+        return prev+curr.population;
+    },0)
+    console.log(ans);
+}
+
+//Print the country which uses US Dollars as currency.
+
+function USDollar(data){
+    let ans =  data.filter((value)=>{
+         return value.currencies[0].code=="USD";    
+    });
+    let result = [];
+    for(let details of ans)
+    {
+        result.push(details.name);
+    }
+    console.log(result);
+}
